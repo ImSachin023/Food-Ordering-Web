@@ -1,36 +1,37 @@
 import { Component } from "react";
 import UserClass from "./UserClass";
-
+import Usercontext from "../utils/UserContext";
 
 class About extends Component {
+  constructor(props) {
+    super(props);
 
-constructor(props){
-    super(props)
+    // console.log("parent Constructor");
+  }
 
-    console.log("parent Constructor")
+  componentDidMount() {
+    // console.log("parent Component did mount");
+  }
+  render() {
+    // console.log("parent render");
+    return (
+      <div className="">
+        <h1>This is about us page</h1>
+        <div className="">
+          <Usercontext.Consumer>
+            {({loggedInUser})=> <h1 className="text-xl font-bold">{loggedInUser}</h1>}
+          </Usercontext.Consumer>
+        </div>
+        <h2>let's know about the about us page</h2>
+
+        <UserClass name={"First"} location={"Bokaro"} />
+        {/* <UserClass name={"second"} location={"Bokaro"} /> */}
+      </div>
+    );
+  }
 }
-
-componentDidMount(){
-    console.log( "parent Component did mount")
-}
-    render(){
-        console.log("parent render")
-        return(
-            <div className="">
-            <h1>This is about us page</h1>
-            <h2>let's know about the about us page</h2>
-      
-            <UserClass name={"First"} location={"Bokaro"} />
-            {/* <UserClass name={"second"} location={"Bokaro"} /> */}
-          </div>
-        )
-    }
-}
-
 
 export default About;
-
-
 
 /*
 * -parent Constructor

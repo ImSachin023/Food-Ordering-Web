@@ -3,7 +3,7 @@ import React from "react";
 class UserClass extends React.Component {
   constructor(props) {
     super(props);
-    console.log(this.props.name +"child Constructor")
+    // console.log(this.props.name +"child Constructor")
 
 
     this.state = {
@@ -22,10 +22,10 @@ class UserClass extends React.Component {
     this.setState({
         userInfo:json
     })
-    console.log(json)
+    // console.log(json)
 
     this.timer = setInterval(()=>{
-      console.log("hello bro")
+      // console.log("hello bro")
     },1000)
   }
 
@@ -41,10 +41,10 @@ class UserClass extends React.Component {
    
   componentWillUnmount(){
    clearInterval(this.timer)
-    console.log("component did unmount")
+    // console.log("component did unmount")
   }
   render() {
-    console.log(this.props.name +"child render")
+    // console.log(this.props.name +"child render")
     // const { name, location } = this.props;
     const {count,count2} = this.state;
     const {name,location,avatar_url} = this.state.userInfo
