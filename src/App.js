@@ -3,7 +3,6 @@ import ReactDOM from "react-dom/client";
 import Header from "./components/Header";
 import Body from "./components/Body";
 import { createBrowserRouter, Outlet, RouterProvider } from "react-router";
-//import About from "./components/About";
 import Contact from "./components/Contact";
 import Error from "./components/Error";
 import RestaurentMenu from "./components/RestaurentMenu";
@@ -11,14 +10,14 @@ import Usercontext from "./utils/UserContext";
 import Login from "./components/Login";
 import appStore from "./utils/appStore";
 import { Provider } from "react-redux";
-// import Grocery from "./components/Grocery";
+import Cart from "./components/Cart";
 
 const Applayout = () => {
 const [userName,setuserName] = useState()
 
 useEffect(()=>{
   const data = {
-    name:"Sachin Kumar"
+    name:"Sachin"
   };
   setuserName(data.name)
 },[])
@@ -54,6 +53,10 @@ const appRouter = createBrowserRouter([
       {
         path: "/contact",
         element: <Contact />,
+      },
+      {
+        path: "/cart",
+        element: <Cart/>,
       },
       {
         path: "/login",

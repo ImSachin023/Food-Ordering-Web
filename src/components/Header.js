@@ -12,10 +12,11 @@ const Header = () => {
 
   const { loggedInUser } = useContext(Usercontext);
 
-  const cartItems = useSelector((store)=>store.cart.item)
+  const cartItems = useSelector((store) => store.cart.item);
+  console.log(cartItems);
 
   return (
-    <div className="flex justify-between bg-gray-200 shadow-lg rounded-2xl p-2 m-1">
+    <div className="flex justify-between bg-white shadow-lg rounded-2xl p-2 m-1">
       <div className="logo-container">
         <img className="w-30 opacity-80 rounded-full" src={LOGO_URL} alt="" />
       </div>
@@ -36,7 +37,9 @@ const Header = () => {
           <li className="px-4 hover:font-bold">
             <Link to="/grocery">Grocery</Link>
           </li>
-          <li className="px-4 hover:font-bold">Cart({cartItems.length} ITEM)</li>
+          <li className="px-4 hover:font-bold">
+            <Link to="/cart">Cart({cartItems.length} ITEM)</Link>
+          </li>
           <Link to="/login">
             <button
               className="login"

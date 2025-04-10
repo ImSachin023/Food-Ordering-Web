@@ -35,7 +35,7 @@ const RestaurentMenu = () => {
         <RestaurentCategory
           key={category?.card?.card?.title}
           data={category?.card?.card}
-          showItems={index === showIndex ? true : false} // particular for one imdex to open ->it will open all index
+          showItems={index === showIndex ? true : false} // particular for one index to open ->it will open all index
           setShowIndex={() => setShowIndex(index)} // it is for the one index open when next index is clicked the other index is closed
         />
       ))}
