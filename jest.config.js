@@ -196,3 +196,9 @@ const config = {
 };
 
 module.exports = config;
+
+module.exports = {
+  testEnvironment: "jsdom", // ✅ add this
+  setupFilesAfterEnv: ["<rootDir>/jest.setup.js"], // if you're using the TextEncoder fix
+  // other settings...
+};
