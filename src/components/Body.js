@@ -13,22 +13,23 @@ const Body = () => {
 
   const RestaurentCardPromoted = withPromotedLabel(RestaurantCard);
 
-
   useEffect(() => {
     fetchData();
   }, []);
 
   const fetchData = async () => {
     const data = await fetch(
-      "https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.9715987&lng=77.5945627&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
+      "https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.9715987&lng=77.5945627&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING",
     );
-    
+
     const json = await data.json();
     setlistofRestaurent(
-      json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants
+      json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle
+        ?.restaurants,
     );
     setfilteredRestaurent(
-      json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants
+      json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle
+        ?.restaurants,
     );
   };
 
@@ -36,8 +37,8 @@ const Body = () => {
   if (onlineStatus === false)
     return <h1>You're Offline!!! Please Check your Internet Connection</h1>;
 
-  const {loggedInUser,setuserName} = useContext(Usercontext)
-
+  const { loggedInUser, setuserName } = useContext(Usercontext);
+  //conditional rendering
   return !listofRestaurents?.length ? (
     <Shimmer />
   ) : (
@@ -57,7 +58,7 @@ const Body = () => {
             className="p-2 m-1  bg-emerald-100 rounded-lg w-15"
             onClick={() => {
               const filteredRestaurents = listofRestaurents.filter((res) =>
-                res.info.name.toLowerCase().includes(searchText.toLowerCase())
+                res.info.name.toLowerCase().includes(searchText.toLowerCase()),
               );
               setfilteredRestaurent(filteredRestaurents);
             }}
@@ -70,7 +71,7 @@ const Body = () => {
             className="px-4 py-2 bg-cyan-100  rounded-lg cursor-pointer"
             onClick={() => {
               const filteredList = listofRestaurents.filter(
-                (res) => res.info.avgRating > 4
+                (res) => res.info.avgRating > 4,
               );
               setlistofRestaurent(filteredList);
             }}
@@ -78,16 +79,19 @@ const Body = () => {
             Top Rated Restaurent
           </button>
         </div>
-        <div className="m-4 p-4 flex items-center">
+        {/* <div className="m-4 p-4 flex items-center">
           <label>Username:</label>
          <input className="px-2 border-black border"
          value={loggedInUser}
          onChange={(e)=>setuserName(e.target.value)} />
-        </div>
+        </div> */}
       </div>
       <div className="w-100% h-50% px-20 flex flex-wrap">
         {filteredRestaurents.map((restaurent) => (
-          <Link key={restaurent.info.id}  to={"/restaurent/" + restaurent.info.id}>
+          <Link
+            key={restaurent.info.id}
+            to={"/restaurent/" + restaurent.info.id}
+          >
             {restaurent.info.availability.opened ? (
               <RestaurentCardPromoted
                 key={restaurent.info.id}

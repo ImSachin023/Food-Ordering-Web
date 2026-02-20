@@ -52,7 +52,7 @@ const Header = () => {
               {btnNameReact}
             </button>
           </Link>
-          <li className="px-4 hover:font-bold">{loggedInUser}</li>
+          {/* <li className="px-4 hover:font-bold">{loggedInUser}</li> */}
         </ul>
       </div>
     </div>
