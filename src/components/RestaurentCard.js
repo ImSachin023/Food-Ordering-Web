@@ -5,22 +5,30 @@ const RestaurantCard = (props) => {
   // console.log(resData)
 
   const { name, cuisines, avgRating, costForTwo, cloudinaryImageId } =
-    resData?.info ;
-  const { deliveryTime } = resData?.info?.sla ;
+    resData?.info;
+  const { deliveryTime } = resData?.info?.sla;
 
   return (
-    <div data-testid="resCard" className="h-16% m-4 p-4 w-[250px] bg-slate-100 rounded-lg">
+    <div
+      data-testid="resCard"
+      className="m-4 p-4 w-100 bg-slate-100 rounded-2xl flex flex-col shadow-lg"
+    >
       <img
-        className="w-100% h-70 rounded-sm"
+        className="w-90 h-60 rounded-2xl object-cover"
         src={CDN_URL + cloudinaryImageId}
         alt=""
       />
-      <div className="h-1/2 p-2 text-md font-bold">
-        <h3 className="py-2 text-xl">{name}</h3>
-        <h4 className="p-2 font-light">{cuisines?.join(" ,")}</h4>
-        <h4 className="p-2">{avgRating} ⭐</h4>
-        <h4 className="p-2">{costForTwo}</h4>
-        <h4 className="p-2">{deliveryTime}minutes</h4>
+      <div className="flex flex-col">
+        <div className="h-1/2 p-2 text-md font-bold">
+        <h3 className="py-2 text-2xl">{name}</h3>
+        <div className="flex flex-row items-center">
+        <h4 className="mx-1">⭐{avgRating} </h4>
+        <h4 className="p-1 mx-1">• {deliveryTime}mins</h4>
+        </div>
+        <h4 className="p-2 mx-1">{costForTwo}</h4>
+          <h4 className="p-2 font-light line-clamp-1 truncate">{cuisines?.join(" ,")}</h4>
+
+      </div>
       </div>
     </div>
   );

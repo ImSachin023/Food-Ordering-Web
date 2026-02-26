@@ -9,9 +9,23 @@ const useRestaurentMenu = (resId) => {
   }, []);
 
   const fetchMenu = async () => {
-    const data = await fetch(MENU_API + resId);
-    const json = await data.json();
-    setresInfo(json.data);
+    try {
+      const data = await fetch(MENU_API + resId);
+      console.log(data);
+      const text = await data.text();
+    console.log("Raw response:", text);
+
+    if (!text) {
+      console.log("Empty response body");
+      return;
+    }
+
+    const json = JSON.parse(text);
+      // const json = await data.json();
+      setresInfo(json?.data);
+    } catch (error) {
+      console.log("Error fetching menu:", error);
+    }
   };
 
   return resInfo;
