@@ -11,7 +11,7 @@ const Body = () => {
   const [bannerImg, setBannerImg] = useState([]);
   const [searchText, setSearchText] = useState("");
 
-  const RestaurentCardPromoted = withPromotedLabel(RestaurantCard);
+  // const RestaurentCardPromoted = withPromotedLabel(RestaurantCard);
 
   useEffect(() => {
     fetchData();
@@ -107,7 +107,7 @@ const Body = () => {
       <div className="my-6 h-[2px] bg-gradient-to-r from-transparent via-gray-400 to-transparent" />
       <div className="flex flex-col">
         <h1 className="ml-8 font-bold text-2xl">What NEW</h1>
-        <div className="flex gap-6 px-4 overflow-x-auto no-scrollbar scroll-smooth">
+        <div className="flex gap-6 px-4 overflow-x-auto scroll-smooth">
           {bannerImg.map((banner) => (
             <img
               key={banner.key}
