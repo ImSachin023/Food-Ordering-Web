@@ -106,20 +106,21 @@ const Body = () => {
       </div>
       <div className="my-6 h-[2px] bg-gradient-to-r from-transparent via-gray-400 to-transparent" />
       <div className="flex flex-col">
-        <h1 className="ml-8 font-bold text-2xl">What NEW</h1>
-        <div className="flex gap-6 px-4 overflow-x-auto scroll-smooth">
+        <h1 className="ml-10 font-bold text-2xl py-2">What NEW</h1>
+        <div className="flex flex-row gap-6 px-4 overflow-x-auto scroll-smooth py-3">
           {bannerImg.map((banner) => (
             <img
               key={banner.key}
-              className="min-w-[250px] h-60 bg-white rounded-3xl object-cover shadow-lg flex-shrink-0"
+              className="py-2 min-w-[250px] h-63 bg-white rounded-3xl object-cover shadow-lg flex-shrink-1"
               src={CDN_URL + banner.imageUrl}
               alt=""
             />
           ))}
+          <div className=""></div>
         </div>
       </div>
       <div className="my-6 h-[2px] bg-gradient-to-r from-transparent via-gray-400 to-transparent" />
-      <h1 className=" font-bold text-2xl text-center underline">
+      <h1 className=" font-bold text-3xl text-center underline mb-6">
         Restaurent Cards
       </h1>
       <div className="w-100% h-50% px-20 flex flex-wrap">

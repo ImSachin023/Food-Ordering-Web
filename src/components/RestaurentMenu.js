@@ -27,7 +27,7 @@ const RestaurentMenu = () => {
     <div className="text-center">
       <h1 className="font-bold my-9 text-4xl border-1 p-2">{name}</h1>
       <p className="font-bold text-lg">
-        {cuisines.join(", ")} - {costForTwoMessage}
+        {/* {cuisines.join(", ")} - {costForTwoMessage} */}
       </p>
       {categories.map((category, index) => (
         //controlled component->it control the restaurentcategory as a child to manage the lifting state up 
