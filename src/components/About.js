@@ -15,14 +15,13 @@ class About extends Component {
   render() {
     // console.log("parent render");
     return (
-      <div className="">
-        <h1>This is about us page</h1>
+      <div className="flex flex-col justify-center items-center">
+        <h1 className=" p-3 m-2 text-5xl font-bold underline">About Us</h1>
         <div className="">
-          <Usercontext.Consumer>
+          {/* <Usercontext.Consumer>
             {({loggedInUser})=> <h1 className="text-xl font-bold">{loggedInUser}</h1>}
-          </Usercontext.Consumer>
+          </Usercontext.Consumer> */}
         </div>
-        <h2>let's know about the about us page</h2>
 
         <UserClass name={"First"} location={"Bokaro"} />
         {/* <UserClass name={"second"} location={"Bokaro"} /> */}

@@ -51,7 +51,7 @@ class UserClass extends React.Component {
 
     return (
       <div className="user-card">
-        <h1>count:{count}</h1>
+        {/* <h1>count:{count}</h1>
         <h1>count:{count2}</h1>
        <button onClick={()=>{
         this.setState({
@@ -65,10 +65,12 @@ class UserClass extends React.Component {
             count:this.state.count -1,
             count2:this.state.count2-1,
         })
-       }}>Count Dencrease</button>
-       <img src={avatar_url} alt="" />
-        <h1>name:{name}</h1>
-        <h2>location:{location}</h2>
+       }}>Count Dencrease</button> */}
+       <img className="w-50 h-50 rounded-4xl" src={avatar_url} alt="" />
+        <h1 className="text-2xl font-bold">name: {name}</h1>
+        <h1 className="text-2xl font-bold">email: Sachinabx3@gmail.com</h1>
+
+        {/* <h2 className="text-lg">location: {location}</h2> */}
       </div>
     );
   }

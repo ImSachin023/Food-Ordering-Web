@@ -25,7 +25,7 @@ useEffect(()=>{
   return (
     <Provider store={appStore}>
     <Usercontext.Provider value={{loggedInUser : userName,setuserName}}>
-    <div className="app min-h-screen bg-yellow-100 w-100% h-100%">
+    <div className="app min-h-screen bg-white w-100% h-100%">
       <Header />
       <Outlet />
     </div>

@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import RestaurantCard, { withPromotedLabel } from "./RestaurentCard";
 import Shimmer from "./Shimmer";
 import { Link } from "react-router";
@@ -49,6 +49,22 @@ const Body = () => {
   const onlineStatus = useOnlineStatus();
   if (onlineStatus === false)
     return <h1>You're Offline!!! Please Check your Internet Connection</h1>;
+
+  const scrollRef = useRef(null);
+
+  const scrollLeft = () => {
+    scrollRef.current.scrollBy({
+      left: -300,
+      behavior: "smooth",
+    });
+  };
+
+  const scrollRight = () => {
+    scrollRef.current.scrollBy({
+      left: 300,
+      behavior: "smooth",
+    });
+  };
 
   // const { loggedInUser, setuserName } = useContext(Usercontext);
   //conditional rendering
@@ -105,23 +121,50 @@ const Body = () => {
         </div> */}
       </div>
       <div className="my-6 h-[2px] bg-gradient-to-r from-transparent via-gray-400 to-transparent" />
-      <div className="flex flex-col">
-        <h1 className="ml-10 font-bold text-2xl py-2">What NEW</h1>
-        <div className="flex flex-row gap-6 px-4 overflow-x-auto scroll-smooth py-3">
+      <div className="flex flex-col bg-white ">
+        <div className=" flex flex-row items-center justify-between">
+          <h1 className="ml-10 font-bold text-3xl py-2 underline ">
+          what's on your mind?
+        </h1>
+        <div className="flex flex-row items-center justify-between gap-2">
+          <div className="flex justify-end gap-2 mb-4 px-20">
+            <button
+              onClick={scrollLeft}
+              className="w-10 h-10 rounded-full bg-gray-200 hover:bg-gray-300 font-bold"
+            >
+              🡠
+            </button>
+
+            <button
+              onClick={scrollRight}
+              className="w-10 h-10 rounded-full bg-gray-200 hover:bg-gray-300 font-bold"
+            >
+              🡢
+            </button>
+            <div
+              ref={scrollRef}
+              className="flex gap-4 overflow-x-auto no-scrollbar"
+            ></div>
+          </div>
+        </div>
+        </div>
+        <div
+          ref={scrollRef}
+          className="flex flex-row gap-6 px-4 overflow-x-auto no-scrollbar py-3"
+        >
           {bannerImg.map((banner) => (
             <img
               key={banner.key}
-              className="py-2 min-w-[250px] h-63 bg-white rounded-3xl object-cover shadow-lg flex-shrink-1"
+              className="py-2 min-w-[250px] h-63 rounded-3xl object-cover flex-shrink-1"
               src={CDN_URL + banner.imageUrl}
               alt=""
             />
           ))}
-          <div className=""></div>
         </div>
       </div>
       <div className="my-6 h-[2px] bg-gradient-to-r from-transparent via-gray-400 to-transparent" />
-      <h1 className=" font-bold text-3xl text-center underline mb-6">
-        Restaurent Cards
+      <h1 className=" font-bold text-4xl underline px-10 py-4">
+        Top restaurant chains
       </h1>
       <div className="w-100% h-50% px-20 flex flex-wrap">
         {filteredRestaurents.map((restaurent) => (
