@@ -11,25 +11,26 @@ import Login from "./components/Login";
 import appStore from "./utils/appStore";
 import { Provider } from "react-redux";
 import Cart from "./components/Cart";
+import Search from "./components/Search";
 
 const Applayout = () => {
-const [userName,setuserName] = useState()
+  const [userName, setuserName] = useState();
 
-useEffect(()=>{
-  const data = {
-    name:"Sachin"
-  };
-  setuserName(data.name)
-},[])
+  useEffect(() => {
+    const data = {
+      name: "Sachin",
+    };
+    setuserName(data.name);
+  }, []);
 
   return (
     <Provider store={appStore}>
-    <Usercontext.Provider value={{loggedInUser : userName,setuserName}}>
-    <div className="app min-h-screen bg-white w-100% h-100%">
-      <Header />
-      <Outlet />
-    </div>
-    </Usercontext.Provider>
+      <Usercontext.Provider value={{ loggedInUser: userName, setuserName }}>
+        <div className="app min-h-screen bg-white w-100% h-100%">
+          <Header />
+          <Outlet />
+        </div>
+      </Usercontext.Provider>
     </Provider>
   );
 };
@@ -48,15 +49,31 @@ const appRouter = createBrowserRouter([
       },
       {
         path: "/about",
-        element: <Suspense fallback={<h1>Loading...</h1>}><About /></Suspense>,
+        element: (
+          <Suspense
+            fallback={
+              <div className="flex justify-center items-center h-screen">
+                <h1 className="text-2xl font-semibold text-gray-600 animate-pulse">
+                  Loading...
+                </h1>
+              </div>
+            }
+          >
+            <About />
+          </Suspense>
+        ),
       },
       {
         path: "/contact",
         element: <Contact />,
       },
       {
+        path: "/search",
+        element: <Search />,
+      },
+      {
         path: "/cart",
-        element: <Cart/>,
+        element: <Cart />,
       },
       {
         path: "/login",
@@ -64,7 +81,19 @@ const appRouter = createBrowserRouter([
       },
       {
         path: "/grocery",
-        element: <Suspense fallback={<h1>Loading...</h1>}><Grocery /></Suspense>,
+        element: (
+          <Suspense
+            fallback={
+              <div className="flex justify-center items-center h-screen">
+                <h1 className="text-2xl font-semibold text-gray-600 animate-pulse">
+                  Loading...
+                </h1>
+              </div>
+            }
+          >
+            <Grocery />
+          </Suspense>
+        ),
       },
       {
         path: "/restaurent/:resId",

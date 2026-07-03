@@ -74,7 +74,7 @@ const Body = () => {
     <div className="w-100% h-100% ">
       <div className="flex flex-col items-center justify-center">
         <div className="flex flex-row items-center justify-between">
-          <div className="search m-4 p-4 px-4 w-100% flex items-center justify-center">
+          {/* <div className="search m-4 p-4 px-4 w-100% flex items-center justify-center">
             <input
               type="text"
               data-testid="searchInput"
@@ -98,8 +98,8 @@ const Body = () => {
             >
               Search
             </button>
-          </div>
-          <div className="mx-10">
+          </div> */}
+          {/* <div className="mx-10">
             <button
               className="px-4 py-2 bg-red-700 rounded-sm cursor-pointer text-white end-3"
               onClick={() => {
@@ -111,7 +111,7 @@ const Body = () => {
             >
               Top Rated Restaurent
             </button>
-          </div>
+          </div> */}
         </div>
         {/* <div className="m-4 p-4 flex items-center">
           <label>Username:</label>
@@ -120,7 +120,7 @@ const Body = () => {
          onChange={(e)=>setuserName(e.target.value)} />
         </div> */}
       </div>
-      <div className="my-6 h-[2px] bg-gradient-to-r from-transparent via-gray-400 to-transparent" />
+      <div className="my-6 h-[2px] bg-gradient-to-r from-transparent" />
       <div className="flex flex-col bg-white ">
         <div className=" flex flex-row items-center justify-between">
           <h1 className="ml-10 font-bold text-3xl py-2 underline ">
