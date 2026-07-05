@@ -30,7 +30,6 @@ A modern and responsive Food Ordering Application built with **React.js** that a
 * Parcel Bundler
 
 ## 📂 Project Structure
-
 ```
 src/
 │── components/
