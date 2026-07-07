@@ -44,35 +44,25 @@ const Grocery = () => {
     <div className="min-h-screen bg-gray-100 p-12 m-6">
       {/* Heading */}
       <div className="text-center mb-10">
-        <h1 className="text-4xl font-bold text-green-700">
+        <h1 className="text-4xl font-bold text-green-700 underline">
           Grocery Store
         </h1>
-        <p className="text-gray-600 mt-2">
-          Fresh groceries delivered to your doorstep.
-        </p>
       </div>
 
       {/* Banner */}
-      <div className="bg-green-600 text-white rounded-2xl p-6 flex flex-col md:flex-row justify-between items-center mb-12">
+      <div className="bg-green-600 text-white rounded-2xl p-6 flex flex-col md:flex-row justify-center items-center mb-12">
         <div>
-          <h2 className="text-3xl font-bold mb-3">
-            Fresh & Healthy Grocery
+          <h2 className="text-5xl font-bold mb-3">
+            Coming Soon..........!!!!!
           </h2>
-          <p className="mb-5">
-            Get fresh vegetables, fruits, dairy products, and more at the
-            best prices.
-          </p>
-
-          <button className="bg-white text-green-700 px-6 py-3 rounded-lg font-semibold hover:bg-gray-100">
-            Shop Now
-          </button>
+       
         </div>
-
+{/* 
         <img
           src="https://images.unsplash.com/photo-1542838132-92c53300491e?w=600"
           alt="Grocery"
           className="w-80 rounded-xl mt-8 md:mt-0"
-        />
+        /> */}
       </div>
 
       {/* Categories */}
