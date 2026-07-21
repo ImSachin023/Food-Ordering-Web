@@ -25,12 +25,6 @@ FoodyHub is a food-ordering web application built with React that lets users bro
 
 ---
 
-## 🖼️ Screenshots
-
-<!-- Add 2-4 screenshots here: restaurant listing, menu page, cart. Visuals sell the project in seconds. -->
-
----
-
 ## 🛠️ Tech Stack
 
 | Category | Technology |
